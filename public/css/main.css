@@ -1,0 +1,41 @@
+body {
+    min-width: 360px;
+    overflow-x: hidden;
+}
+
+.logo {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    bottom: .1rem;
+}
+
+.icon {
+    margin: 0;
+    padding: 0;
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+.btn-icon {
+    position: relative;
+    padding-left: 2.8rem;
+}
+.btn-icon svg {
+    position: absolute;
+    left: .6rem;
+    margin: 0;
+    padding: 0;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.btn-news {
+    width: 6rem;
+}
+
+.card-body img {
+    max-width: 100%;
+}
