@@ -6,34 +6,35 @@ error_reporting(E_ALL);               // Remover em produção
 
 require_once "../vendor/autoload.php";
 
-use NewsPortal\Controller\Router;
+use PortalDeNoticias\Controller\Roteador;
+use PortalDeNoticias\Controller\ConexaoMySQL;
 
-$router = new Router($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-$router->addRoute('GET', '/noticias', 'GetNoticias');
-$router->addRoute('GET', '/ler-noticia', 'GetLerNoticia');
-$router->addRoute('GET', '/escrever-noticia', 'GetEscreverNoticia');
-$router->addRoute('GET', '/editar-noticia', 'GetEditarNoticia');
-$router->addRoute('GET', '/apagar-noticia', 'GetApagarNoticia');
-$router->addRoute('GET', '/tema', 'GetTema');
-$router->addRoute('POST', '/escrever-noticia', 'PostEscreverNoticia');
-$router->addRoute('POST', '/editar-noticia', 'PostEditarNoticia');
-$router->addRoute('POST', '/apagar-noticia', 'PostApagarNoticia');
-$router->addRoute('POST', '/tema', 'PostTema');
+$roteador = new Roteador($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+$roteador->cadastrarRota('GET', '/noticias', 'GetNoticias');
+$roteador->cadastrarRota('GET', '/ler-noticia', 'GetLerNoticia');
+$roteador->cadastrarRota('GET', '/escrever-noticia', 'GetEscreverNoticia');
+$roteador->cadastrarRota('GET', '/editar-noticia', 'GetEditarNoticia');
+$roteador->cadastrarRota('GET', '/tema', 'GetTema');
+$roteador->cadastrarRota('POST', '/escrever-noticia', 'PostEscreverNoticia');
+$roteador->cadastrarRota('POST', '/editar-noticia', 'PostEditarNoticia');
+$roteador->cadastrarRota('POST', '/apagar-noticia', 'PostApagarNoticia');
+$roteador->cadastrarRota('POST', '/tema', 'PostTema');
 
-$route = $router->validateRoute();
-switch ($route["status"]) {
+$rota = $roteador->validarRota();
+switch ($rota["status"]) {
     case "NOT_FOUND":
-        $router->redirect("404");
+        $roteador->redirecionar("404");
         break;
     case "FORBIDDEN":
-        $router->redirect("403"); // Autenticado, mas sem permissão
+        $roteador->redirecionar("403"); // Autenticado, mas sem permissão
         break;
     case "UNAUTHORIZED":
-        $router->redirect("401"); // Não autenticado
+        $roteador->redirecionar("401"); // Não autenticado
         break;
     case "FOUND":
         try {
-            require "../source/controller/" . $route["handler"] . ".php";
+            $conexao = ConexaoMySQL::criarConexao();
+            require "../source/controller/" . $rota["controlador"] . ".php";
         } catch (Throwable $throwable) {
             // Transformar em LOG
             echo "<pre>";

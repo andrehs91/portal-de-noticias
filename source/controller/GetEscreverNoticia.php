@@ -1,4 +1,4 @@
 <?php
 
-$title = "Escrever Notícia";
+$titulo = "Escrever Notícia";
 require "ViewLoader.php";

@@ -1,4 +1,4 @@
-<h1 class="mb-3">Tema</h1>
+<span class="h1 mb-3">Tema</span>
 <section>
     <p>...</p>
     <a href="#" role="button" class="text-primary"><svg class="icon">

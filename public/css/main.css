@@ -15,8 +15,8 @@ body {
 .icon {
     margin: 0;
     padding: 0;
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .btn-icon {
@@ -26,16 +26,46 @@ body {
 .btn-icon svg {
     position: absolute;
     left: .6rem;
-    margin: 0;
-    padding: 0;
     height: 1.8rem;
     width: 1.8rem;
 }
 
-.btn-news {
-    width: 6rem;
+.card {
+    border-color: #bcbebf
 }
 
-.card-body img {
+.card-header {
+    background-color: #0d6efd;
+}
+
+.card-body-content {
+    display: block;
+    overflow: hidden;
+    max-height: 4.5rem;
+}
+
+.card-body-content * {
+    font-size: 1rem;
+    color: black !important;
+}
+
+.card-body-content p {
+    margin: 0;
+}
+
+.card-body img,
+.card-body iframe {
     max-width: 100%;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline:before {
+    position: absolute;
+    content: "";
+    border-left: 1px solid #bcbebf;
+    height: 100%;
+    left: 50%;
 }

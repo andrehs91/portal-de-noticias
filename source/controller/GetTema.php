@@ -1,4 +1,4 @@
 <?php
 
-$title = "Tema";
+$titulo = "Tema";
 require "ViewLoader.php";
