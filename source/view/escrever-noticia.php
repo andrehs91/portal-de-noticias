@@ -1,5 +1,5 @@
 <script src="js/tinymce.js"></script>
-<span class="h1 mb-3">Escrever Notícia</span>
+<h1 class="mb-3">Escrever Notícia</h1>
 <section>
     <form method="POST">
         <input type="hidden" name="noticia-dia-criacao" value="<?= date('Y-m-d'); ?>">

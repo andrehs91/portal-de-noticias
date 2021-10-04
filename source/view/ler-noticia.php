@@ -1,19 +1,19 @@
 <section>
 <?php if (isset($noticia)): ?>
     <div class="d-print-none mb-3">
-        <a href="/editar-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button" class="text-dark"><svg class="icon">
+        <a href="/editar-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button" class="text-dark text-nowrap me-sm-3"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-edit"></use>
         </svg>Editar</a>
-        <a href="/apagar-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#Apagar"><svg class="icon">
+        <a href="/apagar-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button" class="text-dark text-nowrap me-sm-3" data-bs-toggle="modal" data-bs-target="#Apagar"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-delete"></use>
         </svg>Apagar</a>
-        <a href="#" role="button" class="text-dark" onclick="window.print()"><svg class="icon">
+        <a href="#" role="button" class="text-dark text-nowrap me-sm-3" onclick="window.print()"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-print"></use>
         </svg>Imprimir</a>
-        <a href="#" role="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#GerarPDF"><svg class="icon">
+        <a href="#" role="button" class="text-dark text-nowrap me-sm-3" data-bs-toggle="modal" data-bs-target="#GerarPDF"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-pdf"></use>
         </svg>Gerar PDF</a>
-        <a href="/" role="button" class="text-dark"><svg class="icon">
+        <a href="/" role="button" class="text-dark text-nowrap"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-back"></use>
         </svg>Voltar</a>
     </div>

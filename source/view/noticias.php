@@ -1,4 +1,4 @@
-<span class="h1 mb-3">Notícias</span>
+<h1 class="mb-3">Notícias</h1>
 <section class="mb-3">
     <form method="GET">
         <label class="d-inline-block d-md-none form-label text-nowrap" for="parte">Busque uma notícia:</label>

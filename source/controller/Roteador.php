@@ -34,13 +34,13 @@ class Roteador
         $rota = [];
         foreach ($this->rotasValidas as $rotaValida) {
             if ($this->metodoHTTP === $rotaValida["metodo"] && $this->uri === $rotaValida["uri"]) {
-                $rota["status"] = "FOUND";
+                $rota["situacao"] = "FOUND";
                 $rota["uri"] = $rotaValida["uri"];
                 $rota["controlador"] = $rotaValida["controlador"];
                 return $rota;
             }
         }
-        $rota["status"] = "NOT_FOUND";
+        $rota["situacao"] = "NOT_FOUND";
         return $rota;
     }
     

@@ -21,7 +21,7 @@ $roteador->cadastrarRota('POST', '/apagar-noticia', 'PostApagarNoticia');
 $roteador->cadastrarRota('POST', '/tema', 'PostTema');
 
 $rota = $roteador->validarRota();
-switch ($rota["status"]) {
+switch ($rota["situacao"]) {
     case "NOT_FOUND":
         $roteador->redirecionar("404");
         break;

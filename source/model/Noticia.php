@@ -35,8 +35,8 @@ class Noticia
         $this->conteudo = strip_tags(stripslashes($conteudo), '<h2><h3><h4><h5><h6><p><strong><em><u><ins><del><span><li><ol><ul><div><br><a><sup><sub><hr><table><thead><tbody><tfoot><tr><th><td><img><code><iframe>');
     }
     
-    public function getId(): int
-    { return $this->id; }
+    public function getId(): ?int
+    { return isset($this->id) ? $this->id : null; }
     
     public function getDiaCriacao(string $format = "Y-m-d"): string
     { return $this->diaCriacao->format($format); }
@@ -51,7 +51,7 @@ class Noticia
     { return isset($this->horaEdicao) ? $this->horaEdicao : null; }
     
     public function getTitulo(): string
-    { return $this->titulo; }
+    { return htmlentities($this->titulo); }
     
     public function getConteudo(): string
     { return $this->conteudo; }

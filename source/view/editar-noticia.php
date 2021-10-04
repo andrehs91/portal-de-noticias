@@ -1,5 +1,5 @@
 <script src="js/tinymce.js"></script>
-<span class="h1 mb-3">Editar Notícia</span>
+<h1 class="mb-3">Editar Notícia</h1>
 <section>
     <form method="POST">
         <input type="hidden" name="noticia-id" value="<?= $noticia->getId(); ?>">
@@ -15,8 +15,11 @@
             <label for="noticia-conteudo" class="form-label fw-bold">Conteúdo: </label>
             <textarea name="noticia-conteudo" id="noticia-conteudo" placeholder="..."><?= $noticia->getConteudo(); ?></textarea>
         </div>
-        <div class="text-center">
+        <div class="text-center mb-3">
             <button type="submit" class="btn btn-primary px-5">Confirmar Edição</button>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-secondary px-5" href="/ler-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button">Cancelar</a>
         </div>
     </form>
 </section>
