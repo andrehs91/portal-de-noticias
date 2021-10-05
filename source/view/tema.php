@@ -19,28 +19,35 @@
                         <div class="modal-content">
                             <div class="modal-header bg-light">
                                 <h5 class="modal-title" id="EscolherLabel">Escolha uma imagem de fundo</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img0" checked>
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img0" <?= !isset($_COOKIE["imagem-fundo"]) ? "checked" : "" ; ?>>
                                     <label class="form-check-label" for="img0">Sem imagem de fundo</label>
                                 </div>
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img1" value="img/bg-1.jpg">
-                                    <label class="form-check-label" for="img1"><img src="img/bg-1.jpg"></label>
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img1" value="img/bg-1.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-1.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img1"><img src="img/bg-1-thumbnail.jpg"></label>
                                 </div>
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img2" value="img/bg-2.jpg">
-                                    <label class="form-check-label" for="img2"><img src="img/bg-2.jpg"></label>
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img2" value="img/bg-2.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-2.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img2"><img src="img/bg-2-thumbnail.jpg"></label>
                                 </div>
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img3">
-                                    <label class="form-check-label" for="img3">Img3</label>
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img3" value="img/bg-3.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-3.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img3"><img src="img/bg-3-thumbnail.jpg"></label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img4">
-                                    <label class="form-check-label" for="img4">Img3</label>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img4" value="img/bg-4.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-4.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img4"><img src="img/bg-4-thumbnail.jpg"></label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img5" value="img/bg-5.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-5.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img5"><img src="img/bg-5-thumbnail.jpg"></label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="imagem-fundo" id="img6" value="img/bg-6.jpg" <?= isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] === "img/bg-6.jpg" ? "checked" : "" ; ?>>
+                                    <label class="form-check-label" for="img6"><img src="img/bg-6-thumbnail.jpg"></label>
                                 </div>
                             </div>
                             <div class="modal-footer justify-content-center bg-light">

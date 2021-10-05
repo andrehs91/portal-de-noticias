@@ -11,7 +11,7 @@
     <?php 
         if (count($_COOKIE)) {
             echo '<style>';
-                if (isset($_COOKIE["imagem-fundo"])) echo '.card-body { background-image: url("' . $_COOKIE["imagem-fundo"] . '"); background-position: center; background-repeat: repeat; background-size: cover; }';
+                if (isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] !== "on") echo '.card-body { background-image: url("' . $_COOKIE["imagem-fundo"] . '"); background-position: center; background-repeat: repeat; background-size: cover; }';
                 if (isset($_COOKIE["cor-fundo-cabecalho"])) echo '.card-header { background-color:' . $_COOKIE["cor-fundo-cabecalho"] . '; }';
                 if (isset($_COOKIE["cor-fonte-cabecalho"])) echo '.card-header h1 { color:' . $_COOKIE["cor-fonte-cabecalho"] . '; }';
                 if (isset($_COOKIE["cor-fundo-corpo"])) echo '.card { background-color:' . $_COOKIE["cor-fundo-corpo"] . '; }';
