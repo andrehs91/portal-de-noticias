@@ -16,10 +16,10 @@
             <textarea name="noticia-conteudo" id="noticia-conteudo" placeholder="..."><?= $noticia->getConteudo(); ?></textarea>
         </div>
         <div class="text-center mb-3">
-            <button type="submit" class="btn btn-primary px-5">Confirmar Edição</button>
+            <button type="submit" class="btn btn-primary btn-action">Confirmar</button>
         </div>
         <div class="text-center">
-            <a class="btn btn-secondary px-5" href="/ler-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button">Cancelar</a>
+            <a class="btn btn-secondary btn-action" href="/ler-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button">Cancelar</a>
         </div>
     </form>
 </section>

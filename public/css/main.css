@@ -19,6 +19,10 @@ body {
     width: 3rem;
 }
 
+.btn-action {
+    width: 10rem;
+}
+
 .btn-icon {
     position: relative;
     padding-left: 2.8rem;
@@ -31,15 +35,12 @@ body {
 }
 
 .card {
-    border-color: #bcbebf
+    border-color: #bcbebf;
+    background-color: #ffffff;
 }
 
 .card-header {
     background-color: #0d6efd;
-}
-
-.card-body {
-    background-color: #ffffff;
 }
 
 .card-footer {
@@ -76,4 +77,8 @@ body {
     border-left: 1px solid #bcbebf;
     height: 100%;
     left: 50%;
+}
+
+label img {
+    max-width: 100%;
 }

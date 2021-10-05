@@ -12,8 +12,11 @@
             <label for="noticia-conteudo" class="form-label fw-bold">Conteúdo: </label>
             <textarea name="noticia-conteudo" id="noticia-conteudo" placeholder="..."></textarea>
         </div>
+        <div class="text-center mb-3">
+            <button type="submit" class="btn btn-primary btn-action">Publicar</button>
+        </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary px-5">Publicar</button>
+            <a class="btn btn-secondary btn-action" href="/" role="button">Cancelar</a>
         </div>
     </form>
 </section>

@@ -17,7 +17,7 @@
             <use xlink:href="img/icons.svg#icon-back"></use>
         </svg>Voltar</a>
     </div>
-    <div class="card">
+    <article class="card">
         <div class="card-header text-center text-white">
             <h1 class="card-title h2"><?= $noticia->getTitulo(); ?></h1>
         </div>
@@ -36,7 +36,7 @@
                 <?php endif; ?>
             </small>
         </div>
-    </div>
+    </article>
     <div class="d-print-none text-end mt-3">
         <a href="/" role="button" class="text-dark"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-back"></use>
