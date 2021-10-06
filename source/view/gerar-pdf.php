@@ -13,7 +13,7 @@
         </svg>Enviar para um contato</a>
     </div>
     <div class="mt-3">
-        <a href="#" role="button" class="text-dark"><svg class="icon">
+        <a href="/enviar-email" role="button" class="text-dark"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-mail"></use>
         </svg>Enviar por email</a>
     </div>
