@@ -51,7 +51,7 @@ class Noticia
     { return isset($this->horaEdicao) ? $this->horaEdicao : null; }
     
     public function getTitulo(): string
-    { return htmlentities($this->titulo); }
+    { return $this->titulo; }
     
     public function getConteudo(): string
     { return $this->conteudo; }

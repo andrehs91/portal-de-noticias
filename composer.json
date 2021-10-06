@@ -13,5 +13,7 @@
             "email": "andre.h.santos@caixa.gov.br"
         }
     ],
-    "require": {}
+    "require": {
+        "dompdf/dompdf": "^1.0"
+    }
 }

@@ -15,28 +15,16 @@ body {
 .icon {
     margin: 0;
     padding: 0;
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 .btn-action {
     width: 10rem;
 }
 
-.btn-icon {
-    position: relative;
-    padding-left: 2.8rem;
-}
-.btn-icon svg {
-    position: absolute;
-    left: .6rem;
-    height: 1.8rem;
-    width: 1.8rem;
-}
-
 .card {
     border-color: #bcbebf;
-    background-color: #ffffff;
 }
 
 .card-header {

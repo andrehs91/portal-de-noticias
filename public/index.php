@@ -15,6 +15,7 @@ $roteador->cadastrarRota('GET', '/ler-noticia', 'GetLerNoticia');
 $roteador->cadastrarRota('GET', '/escrever-noticia', 'GetEscreverNoticia');
 $roteador->cadastrarRota('GET', '/editar-noticia', 'GetEditarNoticia');
 $roteador->cadastrarRota('GET', '/tema', 'GetTema');
+$roteador->cadastrarRota('GET', '/gerar-pdf', 'GetGerarPDF');
 $roteador->cadastrarRota('POST', '/escrever-noticia', 'PostEscreverNoticia');
 $roteador->cadastrarRota('POST', '/editar-noticia', 'PostEditarNoticia');
 $roteador->cadastrarRota('POST', '/apagar-noticia', 'PostApagarNoticia');
