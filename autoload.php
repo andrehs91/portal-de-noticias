@@ -4,10 +4,10 @@ spl_autoload_register(
     function (string $namespace): void
     {
         $namespace = str_replace("PortalDeNoticias\\", "", $namespace);
+        $namespace = str_replace("Controller\\", "controller\\", $namespace);
+        $namespace = str_replace("DAO\\", "dao\\", $namespace);
+        $namespace = str_replace("Model\\", "model\\", $namespace);
         $namespace = str_replace("\\", DIRECTORY_SEPARATOR, $namespace);
-        $namespace = str_replace("Controller", "controller", $namespace);
-        $namespace = str_replace("DAO", "dao", $namespace);
-        $namespace = str_replace("Model", "model", $namespace);
         $path = str_replace('public', 'source', getcwd()) . DIRECTORY_SEPARATOR . $namespace . '.php';
 
         include_once $path;
