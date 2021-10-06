@@ -2,11 +2,6 @@
     "name": "andrehs91/portal-de-noticias",
     "description": "Producao tematica para o PSI 12017",
     "type": "project",
-    "autoload": {
-        "psr-4": {
-            "PortalDeNoticias\\": "source/"
-        }
-    },
     "authors": [
         {
             "name": "Andre Henrique dos Santos",
