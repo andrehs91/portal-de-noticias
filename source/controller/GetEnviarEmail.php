@@ -7,7 +7,9 @@ use PHPMailer\PHPMailer\Exception;
 $email = new PHPMailer(true);
 
 try {
-    $email->SMTPDebug = SMTP::DEBUG_SERVER;
+    $email->Encoding   = 'base64';
+    $email->CharSet    = 'UTF-8';
+    // $email->SMTPDebug  = SMTP::DEBUG_SERVER;
     $email->isSMTP();
     $email->Host       = 'smtp.gmail.com';
     $email->SMTPAuth   = true;
@@ -16,13 +18,13 @@ try {
     $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $email->Port       = 587;
     
-    $email->setFrom('portaldenoticias@andrehenrique.tech', 'Portal de Noticias');
-    $email->addAddress('ahs_1991@hotmail.com', 'Andre Henrique');
+    $email->setFrom('portaldenoticias@andrehenrique.tech', 'Portal de Notícias');
+    $email->addAddress('ahs_1991@hotmail.com', 'André Henrique');
     $email->addAttachment("temp/noticia.pdf");
     $email->isHTML(true);
     $email->Subject = 'Portal de Notícias';
-    $email->Body    = 'Notícia encaminhada pelo <a href="https://pdn.andrehenrique.tech">Portal de Notícias</a>.';
-    $email->AltBody = 'Notícia encaminhada pelo "Portal de Notícias", endereço https://pdn.andrehenrique.tech.';
+    $email->Body    = '<p>Olá!</p><p>Segue anexa uma notícia encaminhada pelo <a href="https://pdn.andrehenrique.tech">Portal de Notícias</a>, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de <u>Produção Temática</u> do <u>PSI 12017</u> para a vaga de Assistente Júnior demandado pela <u>unidade 5263</u>.</p>.';
+    $email->AltBody = 'Segue anexa uma notícia encaminhada pelo "Portal de Notícias", endereço https://pdn.andrehenrique.tech, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de Produção Temática do PSI 12017 para a vaga de Assistente Júnior demandado pela unidade 5263.';
     $email->send();
     $resultado = "Email encaminhado com sucesso!";
 } catch (Exception $e) {

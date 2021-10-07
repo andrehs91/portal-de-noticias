@@ -44,7 +44,7 @@
     <section class="col-12 col-sm-4 col-lg-3 mt-3 mt-sm-0 ps-0 ps-sm-3">
         <div class="alert alert-secondary">
             <h2 class="h3">Sobre o Projeto</h2>
-            <p>Este portal de notícias foi desenvolvido conforme especificado na etapa de <u>Produção Temática</u> do <u>PSI 12017</u> para a vaga de Assistente Júnior com provimento na <u>unidade 7192</u> (CEHAN - CN Atividade Técnica de Habitação Corporate).</p>
+            <p>Este portal de notícias foi desenvolvido conforme especificado na etapa de <u>Produção Temática</u> do <u>PSI 12017</u> para a vaga de Assistente Júnior demandado pela <u>unidade 5263</u>. (GEHAB - GN Rede Executiva Habitação).</p>
             <p class="mb-0">Além da leitura, escrita, edição e exclusão de uma notícia, ele contém as seguintes funcionalidades:</p>
             <ul>
                 <li>Alteração do tema das notícias (cores de fundo e fonte)</li>
