@@ -33,7 +33,7 @@
     <p class="mb-0"><strong>Obs.:</strong> Existem alternativas em JavaScript/Node que utilizam o recurso Headless Chrome para renderização, possibilitando resultados mais fiéis.</p>
 </div>
 <div class="modal fade" id="EnviarEmail" tabindex="-1" aria-labelledby="EnviarEmailLabel" aria-hidden="true">
-    <form method="GET" action="/enviar-email">
+    <form method="POST" action="/enviar-email">
         <input type="hidden" name="noticia-id" value="<?= $noticia->getId(); ?>">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -42,8 +42,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label for="email" class="form-label mt-3">Email do destinatário</label>
-                    <input class="form-control mb-3" type="email" name="email" id="email" placeholder="nome@dominio.com.br">
+                    <label for="destinatario" class="form-label mt-3">Email do destinatário</label>
+                    <input class="form-control mb-3" type="destinatario" name="destinatario" id="destinatario" placeholder="nome@dominio.com.br">
                 </div>
                 <div class="modal-footer justify-content-center bg-light">
                     <button type="submit" class="btn btn-primary px-5 me-2" >Enviar</button>
