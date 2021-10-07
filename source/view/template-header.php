@@ -7,7 +7,7 @@
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <?php if ($rota['uri'] === '/escrever-noticia' || $rota['uri'] === '/editar-noticia'): ?>
+    <?php if (isset($rota['uri']) && ($rota['uri'] === '/escrever-noticia' || $rota['uri'] === '/editar-noticia')): ?>
     <script src='https://cdn.tiny.cloud/1/t5rfiy2vb2lml9qffs0gys0y76u96mfybkwp9mtciia4x2sr/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
     <?php endif; ?>
     <?php 
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item mx-2 mb-2 mb-sm-0">
-                        <a class="nav-link<?= $rota['uri'] === '/escrever-noticia' ? ' active' : '' ; ?>" href="/escrever-noticia">Escrever Notícia</a>
+                        <a class="nav-link<?= (isset($rota['uri']) && $rota['uri'] === '/escrever-noticia') ? ' active' : '' ; ?>" href="/escrever-noticia">Escrever Notícia</a>
                     </li>
                     <li class="nav-item mb-2 mb-sm-0">
                         <a class="btn btn-primary" href="/tema" role="button">Alterar Tema</a>

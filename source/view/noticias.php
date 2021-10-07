@@ -1,17 +1,18 @@
 <h1 class="mb-3">Notícias</h1>
 <section class="mb-3">
     <form method="GET">
-        <label class="d-inline-block d-md-none form-label text-nowrap" for="parte">Busque uma notícia:</label>
-        <div class="d-flex align-items-end">
-            <label class="d-none d-md-inline-block form-label text-nowrap" for="parte">Busque uma notícia:</label>
-            <input class="form-control ms-md-2 me-2" type="search" name="parte" id="parte" placeholder="Ditige uma parte do título ou do conteúdo" aria-label="Buscar notícia" value="<?= (isset($_GET["parte"]) && $_GET["parte"] !== "") ? filter_input(INPUT_GET, "parte") : "" ; ?>">
-            <button class="btn btn-primary me-2" type="submit">Buscar</button><a class="btn btn-secondary" href="/" role="button">Limpar</a>
+        <div class="d-flex flex-wrap flex-md-nowrap align-items-end">
+            <label class="form-label text-nowrap" for="parte">Busque uma notícia:</label>
+            <input class="form-control mx-md-3 mb-3 mb-md-0" type="search" name="parte" id="parte" placeholder="Ditige uma parte do título ou do conteúdo" aria-label="Buscar notícia" value="<?= (isset($_GET["parte"]) && $_GET["parte"] !== "") ? filter_input(INPUT_GET, "parte") : "" ; ?>">
+            <div class="btns-search">
+                <button class="btn btn-primary me-2" type="submit">Buscar</button><a class="btn btn-secondary ms-2" href="/" role="button">Limpar</a>
+            </div>
         </div>
     </form>
 </section>
 <hr>
 <div class="row g-0">
-    <section class="col-12 col-sm-8 col-lg-9">
+    <section class="col-12 col-md-8 col-lg-9">
     <?php if (isset($noticias)): ?>
         <div class="row g-0">
             <?php foreach ($noticias as $noticia): ?>
@@ -41,8 +42,8 @@
         <div class="alert alert-primary" role="alert">Nenhuma notícia foi encontrada.</div>
     <?php endif; ?>
     </section>
-    <section class="col-12 col-sm-4 col-lg-3 mt-3 mt-sm-0 ps-0 ps-sm-3">
-        <div class="alert alert-secondary">
+    <section class="col-12 col-md-4 col-lg-3 mt-3 mt-md-0 ps-0 ps-md-3">
+        <div class="alert alert-secondary my-0">
             <h2 class="h3">Sobre o Projeto</h2>
             <p>Este portal de notícias foi desenvolvido conforme especificado na etapa de <u>Produção Temática</u> do <u>PSI 12017</u> para a vaga de Assistente Júnior demandado pela <u>unidade 5263</u>. (GEHAB - GN Rede Executiva Habitação).</p>
             <p class="mb-0">Além da leitura, escrita, edição e exclusão de uma notícia, ele contém as seguintes funcionalidades:</p>

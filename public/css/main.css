@@ -19,6 +19,15 @@ body {
     width: 2.5rem;
 }
 
+.btns-search {
+    display: flex;
+    justify-content: end;
+}
+
+.btns-search .btn {
+    width: 10rem;
+}
+
 .btn-action {
     width: 10rem;
 }
@@ -69,4 +78,16 @@ body {
 
 label img {
     max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .btns-search {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .btns-search .btn {
+        width: 5rem;
+    }
 }

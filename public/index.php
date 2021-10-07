@@ -28,12 +28,6 @@ switch ($rota["situacao"]) {
     case "NOT_FOUND":
         $roteador->redirecionar("404");
         break;
-    case "FORBIDDEN":
-        $roteador->redirecionar("403"); // Autenticado, mas sem permissão
-        break;
-    case "UNAUTHORIZED":
-        $roteador->redirecionar("401"); // Não autenticado
-        break;
     case "FOUND":
         try {
             $conexao = ConexaoMySQL::criarConexao();

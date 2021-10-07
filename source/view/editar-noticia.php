@@ -16,10 +16,7 @@
             <textarea name="noticia-conteudo" id="noticia-conteudo" placeholder="..."><?= $noticia->getConteudo(); ?></textarea>
         </div>
         <div class="text-center mb-3">
-            <button type="submit" class="btn btn-primary btn-action">Confirmar</button>
-        </div>
-        <div class="text-center">
-            <a class="btn btn-secondary btn-action" href="/ler-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button">Cancelar</a>
+            <button type="submit" class="btn btn-primary btn-action me-2">Confirmar</button><a class="btn btn-secondary btn-action ms-2" href="/ler-noticia?noticia-id=<?= $noticia->getId(); ?>" role="button">Cancelar</a>
         </div>
     </form>
 </section>

@@ -6,7 +6,7 @@
 <a class="d-inline-block btn btn-dark ms-3 mb-3" href="/tema?restaurar=true" role="button">Restaurar Padrão</a>
 <section>
     <form method="POST">
-        <hr>
+        <hr class="mt-0">
         <div class="row align-items-end">
             <div class="col-8 col-lg-4 text-end">
                 <div class="form-label fw-bold">Imagem de fundo:</div>

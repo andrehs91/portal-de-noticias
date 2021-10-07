@@ -13,19 +13,43 @@
         </svg>Enviar para um contato</a>
     </div>
     <div class="mt-3">
-        <a href="/enviar-email" role="button" class="text-dark"><svg class="icon">
+        <a href="#" role="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#EnviarEmail"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-mail"></use>
         </svg>Enviar por email</a>
     </div>
     <div class="mt-3">
-        <a href="/" role="button" class="text-dark"><svg class="icon">
+        <a href="javascript:history.back()" role="button" class="text-dark"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-back"></use>
         </svg>Voltar</a>
     </div>
 </section>
-<div class="alert alert-danger" role="alert">
-    <strong>Nota Técnica:</strong><br>
-    &nbsp; &nbsp; A geração dos arquivos em formato PDF pelo servidor se mostrou inviável para este tipo de aplicação, visto que o componente utilizado <a href="https://github.com/dompdf/dompdf" class="text-danger" target="_blank">(dompdf/dompdf)</a>, apesar de ser a opção mais baixada no repositório <a href="https://packagist.org/" class="text-danger" target="_blank">https://packagist.org/</a>, apresentou problemas na renderização de imagens e fontes.<br>
-    &nbsp; &nbsp; Um cenário mais adequado para este tipo de implementação é o da geração de documentos padronizados (faturas, relatórios, pareceres, etc.), que podem ter seu layout previamente validado.<br>
-    &nbsp; &nbsp; Neste caso, em que o conteúdo pode ser amplamente customizado, acredito que a geração do arquivo deva ser feita diretamente pelo usuário na opção de Impressão > Salvar como PDF (disponível na maioria dos dispositivos desktop/mobile modernos), para que o resultado visual seja mais fiel ao observado no site.
+<div class="alert alert-danger mb-0" role="alert">
+    <strong>Nota Técnica</strong>
+    <ul class="my-3">
+        <li>A geração pelo servidor dos arquivos em formato PDF se mostrou inviável para este tipo de aplicação, visto que o componente utilizado <a href="https://github.com/dompdf/dompdf" class="text-danger" target="_blank">(dompdf/dompdf)</a>, apesar de ser a opção mais baixada no repositório <a href="https://packagist.org/" class="text-danger" target="_blank">https://packagist.org/</a>, apresentou problemas na renderização de imagens e fontes.</li>
+        <li>Considerando que este projeto oferece uma ampla gama de opções de customização do conteúdo, torna-se inviável escrever uma funcionalidade que consiga tratar todos os possíveis casos de erro.</li>
+        <li>Um cenário mais adequado para este tipo de implementação utilizando apenas PHP é o da geração de documentos padronizados (faturas, relatórios, pareceres, etc.), que podem ter seu layout previamente validado.</li>
+    </ul>
+    <p class="mb-0"><strong>Obs.:</strong> Existem alternativas em JavaScript/Node que utilizam o recurso Headless Chrome para renderização, possibilitando resultados mais fiéis.</p>
+</div>
+<div class="modal fade" id="EnviarEmail" tabindex="-1" aria-labelledby="EnviarEmailLabel" aria-hidden="true">
+    <form method="GET" action="/enviar-email">
+        <input type="hidden" name="noticia-id" value="<?= $noticia->getId(); ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title" id="EnviarEmailLabel">Atenção!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="email" class="form-label mt-3">Email do destinatário</label>
+                    <input class="form-control mb-3" type="email" name="email" id="email" placeholder="nome@dominio.com.br">
+                </div>
+                <div class="modal-footer justify-content-center bg-light">
+                    <button type="submit" class="btn btn-primary px-5 me-2" >Enviar</button>
+                    <button type="button" class="btn btn-secondary ms-2" data-bs-dismiss="modal" style="width: 8.75rem">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

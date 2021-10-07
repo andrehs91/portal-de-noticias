@@ -13,10 +13,7 @@
             <textarea name="noticia-conteudo" id="noticia-conteudo" placeholder="..."></textarea>
         </div>
         <div class="text-center mb-3">
-            <button type="submit" class="btn btn-primary btn-action">Publicar</button>
-        </div>
-        <div class="text-center">
-            <a class="btn btn-secondary btn-action" href="/" role="button">Cancelar</a>
+            <button type="submit" class="btn btn-primary btn-action me-2">Publicar</button><a class="btn btn-secondary btn-action ms-2" href="/" role="button">Cancelar</a>
         </div>
     </form>
 </section>

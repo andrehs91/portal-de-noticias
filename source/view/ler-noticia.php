@@ -13,7 +13,7 @@
         <a href="/gerar-pdf?noticia-id=<?= $noticia->getId(); ?>" role="button" class="text-dark text-nowrap me-sm-3"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-pdf"></use>
         </svg>Gerar PDF</a>
-        <a href="/" role="button" class="text-dark text-nowrap"><svg class="icon">
+        <a href="javascript:history.back()" role="button" class="text-dark text-nowrap"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-back"></use>
         </svg>Voltar</a>
     </div>
@@ -38,7 +38,7 @@
         </div>
     </article>
     <div class="d-print-none text-end mt-3">
-        <a href="/" role="button" class="text-dark"><svg class="icon">
+        <a href="javascript:history.back()" role="button" class="text-dark"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-back"></use>
         </svg>Voltar</a>
     </div>

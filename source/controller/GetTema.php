@@ -6,7 +6,7 @@ if (isset($_GET["restaurar"])) {
             setcookie($chave, null, - 1);
         }
     }
-    header('Location: /');
+    header('Location: /tema');
 }
 
 $titulo = "Tema";
