@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+$destinatario = "ahs_1991@hotmail.com";
 $email = new PHPMailer(true);
 
 try {
@@ -19,7 +20,7 @@ try {
     $email->Port       = 587;
     
     $email->setFrom('portaldenoticias@andrehenrique.tech', 'Portal de Notícias');
-    $email->addAddress('ahs_1991@hotmail.com', 'André Henrique');
+    $email->addAddress($destinatario);
     $email->addAttachment("temp/noticia.pdf");
     $email->isHTML(true);
     $email->Subject = 'Portal de Notícias';
