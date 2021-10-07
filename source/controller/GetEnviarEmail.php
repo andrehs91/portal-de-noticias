@@ -12,9 +12,7 @@ try {
     $cabecalhos .= "From: Portal de Noticias <portaldenoticias@andrehenrique.tech>\r\n";
     $cabecalhos .= "Reply-To: Portal de Noticias <portaldenoticias@andrehenrique.tech>\r\n";
 
-    ini_set(sendmail_from,'portaldenoticias@andrehenrique.tech');
-        $email = mail($destino, $assunto, $conteudo, $cabecalhos);
-    ini_restore(sendmail_from);
+    $email = mail($destino, $assunto, $conteudo, $cabecalhos);
     // $resultado = "Email encaminhado com sucesso!";
 } catch (Throwable $throwable) {
     // $resultado = "Houve um problema no envio do email.";
