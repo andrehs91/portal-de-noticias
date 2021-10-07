@@ -12,10 +12,18 @@ try {
     $cabecalhos .= "From: Portal de Noticias <portaldenoticias@andrehenrique.tech>\r\n";
     $cabecalhos .= "Reply-To: Portal de Noticias <portaldenoticias@andrehenrique.tech>\r\n";
 
-    $email = mail($destino, $assunto, $conteudo, $cabecalhos);
-    $resultado = "Email encaminhado com sucesso!";
+    ini_set(sendmail_from,'portaldenoticias@andrehenrique.tech');
+        $email = mail($destino, $assunto, $conteudo, $cabecalhos);
+    ini_restore(sendmail_from);
+    // $resultado = "Email encaminhado com sucesso!";
 } catch (Throwable $throwable) {
-    $resultado =  "Houve um problema no envio do email.";
+    // $resultado = "Houve um problema no envio do email.";
+    echo "<pre>";
+    echo "getFile: " . $throwable->getFile() . PHP_EOL;
+    echo "getLine: " . $throwable->getLine() . PHP_EOL;
+    echo "getMessage: " . $throwable->getMessage() . PHP_EOL;
+    echo "getTraceAsString: " . $throwable->getTraceAsString() . PHP_EOL;
+    echo "</pre>";
 } finally {
     $titulo = "Envio de notícia por email";
     require "../source/view/template-header.php";
