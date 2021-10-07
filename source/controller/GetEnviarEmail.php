@@ -24,7 +24,7 @@ try {
     $email->addAttachment("temp/noticia.pdf");
     $email->isHTML(true);
     $email->Subject = 'Portal de Notícias';
-    $email->Body    = '<p>Olá!</p><p>Segue anexa uma notícia encaminhada pelo <a href="https://pdn.andrehenrique.tech">Portal de Notícias</a>, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de <u>Produção Temática</u> do <u>PSI 12017</u> para a vaga de Assistente Júnior demandado pela <u>unidade 5263</u>.</p>.';
+    $email->Body    = '<p>Olá!</p><p>Segue anexa uma notícia encaminhada pelo <a href="https://pdn.andrehenrique.tech">Portal de Notícias</a>, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de <strong>Produção Temática</strong> do <strong>PSI 12017</strong> para a vaga de Assistente Júnior demandado pela <strong>unidade 5263</strong>.</p>';
     $email->AltBody = 'Segue anexa uma notícia encaminhada pelo "Portal de Notícias", endereço https://pdn.andrehenrique.tech, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de Produção Temática do PSI 12017 para a vaga de Assistente Júnior demandado pela unidade 5263.';
     $email->send();
     $resultado = "Email encaminhado com sucesso!";
