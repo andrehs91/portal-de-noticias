@@ -3,7 +3,7 @@
     <div>O arquivo PDF foi gerado com sucesso!</div>
     <div>O que deseja fazer com ele?</div>
     <div class="mt-3">
-        <a href="temp/noticia.pdf" role="button" class="text-dark"><svg class="icon">
+        <a href="temp/noticia.pdf" target="_blank" role="button" class="text-dark"><svg class="icon">
             <use xlink:href="img/icons.svg#icon-download"></use>
         </svg>Baixar</a>
     </div>
