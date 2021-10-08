@@ -134,5 +134,24 @@ $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 file_put_contents("temp/noticia.pdf", $dompdf->output());
 
-$titulo = "Notícia em PDF";
+$contatos = [
+    ["matricula" => "c000000", "nome" => "Teste", "email" => "ahs_1991@hotmail.com"],
+    ["matricula" => "c052739", "nome" => "Eduardo Manzano Filho", "email" => "eduardo.manzano@caixa.gov.br"],
+    ["matricula" => "c065248", "nome" => "Georg Vine Boldt", "email" => "georg.boldt@caixa.gov.br"],
+    ["matricula" => "c078959", "nome" => "Christian Wakabayashi", "email" => "christian.wakabayashi@caixa.gov.br"],
+    ["matricula" => "c079432", "nome" => "Camila Braga do Rosario Pastori", "email" => "camilarosario@caixa.gov.br"],
+    ["matricula" => "c080220", "nome" => "Renato Garrido de Barros", "email" => "renato.barros@caixa.gov.br"],
+    ["matricula" => "c088357", "nome" => "Veronica Simao Esteves de Souza", "email" => "veronica.e.souza@caixa.gov.br"],
+    ["matricula" => "c094185", "nome" => "Melissa Balbi Romao Nogueira", "email" => "melissa.balbi@caixa.gov.br"],
+    ["matricula" => "c096926", "nome" => "Bueno Jose Pereira de Sousa", "email" => "bueno.sousa@caixa.gov.br"],
+    ["matricula" => "c109711", "nome" => "Ursula Beatriz Schmitdinger Vieira", "email" => "ursula.vieira@caixa.gov.br"],
+    ["matricula" => "c112132", "nome" => "Marcos Antonio Batista", "email" => "marcos.a.batista@caixa.gov.br"],
+    ["matricula" => "c115249", "nome" => "Erika Regina Yokoda", "email" => "erika.yokoda@caixa.gov.br"],
+    ["matricula" => "c129141", "nome" => "Andre Henrique dos Santos", "email" => "andre.h.santos@caixa.gov.br"],
+    ["matricula" => "c129808", "nome" => "Eduardo Von Schwerin Pimentel", "email" => "eduardo.pimentel@caixa.gov.br"]
+];
+$coluna = array_column($contatos, 'nome');
+array_multisort($coluna, SORT_ASC, $contatos);
+
+$titulo = "Gerar PDF";
 require "ViewLoader.php";

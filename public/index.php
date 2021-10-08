@@ -4,6 +4,7 @@ ini_set('display_errors', 1);         // Remover em produção
 ini_set('display_startup_errors', 1); // Remover em produção
 error_reporting(E_ALL);               // Remover em produção
 
+require_once "../config.php";
 require_once "../autoload.php";
 require_once "../vendor/autoload.php";
 
