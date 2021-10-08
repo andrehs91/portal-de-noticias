@@ -31,6 +31,15 @@ switch ($rota["situacao"]) {
         break;
     case "FOUND":
         try {
+            if ($rota["controlador"] !== "GetGerarPDF" && $rota["controlador"] !== "PostEnviarEmail") {
+                session_start();
+                if (isset($_SESSION["id"])) {
+                    unlink("temp/" . $_SESSION["id"] . "/Noticia.pdf");
+                    rmdir("temp/" . $_SESSION["id"]);
+                }
+                session_unset();
+                session_destroy();
+            }
             $conexao = ConexaoMySQL::criarConexao();
             require "../source/controller/" . $rota["controlador"] . ".php";
         } catch (Throwable $throwable) {

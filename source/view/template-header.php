@@ -10,8 +10,8 @@
     <?php if (isset($rota['uri']) && ($rota['uri'] === '/escrever-noticia' || $rota['uri'] === '/editar-noticia')): ?>
     <script src='https://cdn.tiny.cloud/1/t5rfiy2vb2lml9qffs0gys0y76u96mfybkwp9mtciia4x2sr/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
     <?php endif; ?>
-    <?php 
-        if (count($_COOKIE)) {
+    <?php
+        if (isset($_COOKIE["cor-bordas"])) {
             echo '<style>';
                 if (isset($_COOKIE["imagem-fundo"]) && $_COOKIE["imagem-fundo"] !== "on") echo '.card-body { background-image: url("' . $_COOKIE["imagem-fundo"] . '"); background-position: center; background-repeat: repeat; background-size: cover; }';
                 if (isset($_COOKIE["cor-fundo-cabecalho"])) echo '.card-header { background-color:' . $_COOKIE["cor-fundo-cabecalho"] . '; }';
@@ -22,7 +22,7 @@
                 if (isset($_COOKIE["cor-fonte-corpo"])) echo '.card-body-content * { color:' . $_COOKIE["cor-fonte-corpo"] . ' !important; }';
                 if (isset($_COOKIE["cor-fundo-rodape"])) echo '.card-footer { background-color:' . $_COOKIE["cor-fundo-rodape"] . '; }';
                 if (isset($_COOKIE["cor-fonte-rodape"])) echo '.card-footer .text-muted { color:' . $_COOKIE["cor-fonte-rodape"] . ' !important; }';
-                if (isset($_COOKIE["cor-bordas"])) echo '.card { border-color:' . $_COOKIE["cor-bordas"] . '; }';
+                echo '.card { border-color:' . $_COOKIE["cor-bordas"] . '; }';
             echo '</style>';
         }
     ?>

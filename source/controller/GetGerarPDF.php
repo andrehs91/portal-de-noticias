@@ -6,6 +6,12 @@ use Dompdf\Options;
 
 if (!isset($_GET["noticia-id"])) $roteador->redirecionar("noticia-nao-encontrada");
 
+session_start();
+if (!isset($_SESSION["id"])) {
+    $_SESSION["id"] = md5(date("ymdhis"));
+    mkdir("temp/" . $_SESSION["id"], 0777);
+}
+
 $id = filter_input(INPUT_GET, "noticia-id");
 $noticiaDAO = new NoticiaDAO($conexao);
 $noticia = $noticiaDAO->lerUma($id);
@@ -76,7 +82,7 @@ hr {
 </style>
 EOT;
 
-if (count($_COOKIE)) {
+if (isset($_COOKIE["cor-bordas"])) {
     $noticiaHTML .=  '<style>';
     $noticiaHTML .=  '.card-header { background-color:' . $_COOKIE["cor-fundo-cabecalho"] . '; }';
     $noticiaHTML .=  '.card-header h1 { color:' . $_COOKIE["cor-fonte-cabecalho"] . '; }';
@@ -132,10 +138,9 @@ $dompdf = new Dompdf($options);
 $dompdf->loadHtml($noticiaHTML);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-file_put_contents("temp/noticia.pdf", $dompdf->output());
+file_put_contents("temp/" . $_SESSION["id"] . "/Noticia.pdf", $dompdf->output());
 
 $contatos = [
-    ["matricula" => "c000000", "nome" => "Teste", "email" => "ahs_1991@hotmail.com"],
     ["matricula" => "c052739", "nome" => "Eduardo Manzano Filho", "email" => "eduardo.manzano@caixa.gov.br"],
     ["matricula" => "c065248", "nome" => "Georg Vine Boldt", "email" => "georg.boldt@caixa.gov.br"],
     ["matricula" => "c078959", "nome" => "Christian Wakabayashi", "email" => "christian.wakabayashi@caixa.gov.br"],

@@ -4,6 +4,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+session_start();
+
 $email = new PHPMailer(true);
 
 function html($conteudo)
@@ -31,7 +33,7 @@ if (isset($_POST["destinatario"]) && $_POST["destinatario"] !== "") {
         
         $email->setFrom('portaldenoticias@andrehenrique.tech', 'Portal de Notícias');
         $email->addAddress($destinatario);
-        $email->addAttachment("temp/noticia.pdf");
+        $email->addAttachment("temp/" . $_SESSION["id"] . "/Noticia.pdf");
         $email->isHTML(true);
         $email->Subject = 'Portal de Notícias';
         $email->Body    = '<p>Segue anexa uma notícia encaminhada pelo <a href="https://pdn.andrehenrique.tech">Portal de Notícias</a>, um projeto desenvolvido por André Henrique (c129141) conforme especificado na etapa de <strong>Produção Temática</strong> do <strong>PSI 12017</strong> para a vaga de Assistente Júnior demandado pela <strong>unidade 5263</strong>.</p>';
